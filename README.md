@@ -9,5 +9,5 @@ classe que substitui uma as vogais de uma frase por uma única vogal. faz isso n
 
 ### main.py
 importa e executa:
-.end_str.EOL
-.vogais.FraseCom1Vogal()
+* end_str.EOL
+* vogais.FraseCom1Vogal()
