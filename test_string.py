@@ -1,16 +1,21 @@
-frase = 'o sapo nao lava o pe'
+class FraseCom1Vogal():
+    frase = 'o sapo nao lava o pe'
 
-vogais = ['a', 'e', 'i', 'o', 'u']
-frases = []
+    vogais = ['a', 'e', 'i', 'o', 'u']
+    frases = []
 
-def getFrases(lin: str, idx: int = 0) -> str:
-    vogal = vogais[idx]
-    for letra in lin:
-        if ((letra in vogais) and (vogal != letra)):
-            lin = lin.replace(letra, vogal)
-    return lin
+    def __init__(self):
+        for vogal in self.vogais:
+            self.frases.append(
+                self.getFrases(
+                    self.frase,
+                    self.vogais.index(vogal)
+                )
+            )
 
-for vogal in vogais:
-    frases.append(getFrases(frase, vogais.index(vogal)))
-  
-print(frases)
+    def getFrases(self, lin: str, idx: int = 0) -> str:
+        vogal = self.vogais[idx]
+        for letra in lin:
+            if letra in self.vogais and vogal != letra:
+                lin = lin.replace(letra, vogal)
+        return lin
